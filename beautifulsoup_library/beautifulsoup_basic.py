@@ -8,4 +8,14 @@ udemy.status_code
 udemy_home = udemy.content
 
 soup = BeautifulSoup(udemy_home,"html.parser")
-print(udemy_home)
+
+print(soup.prettify())      #okunaklı görünüm
+print(soup.title)           
+print(soup.title.string)      #sadece title
+print(soup.title.parent.name)
+
+print(soup.find_all("a"))
+for link in soup.find_all("a"):
+    print(link.get("href"))
+
+print(soup.get_text())
